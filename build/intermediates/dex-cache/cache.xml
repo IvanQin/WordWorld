@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0-alpha2/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="df7f6513d6e2aaa302bbac654807c6129b517090">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0-alpha2_e2359ca6071f25421184f93ce41d61fca5b63453.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/WordWorld/base/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="754abaffa2df61e40678416d0673b3bd639044a8">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-base-unspecified_796da374ee53722faa4c010a83b8a5849eb39a1b.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-alpha2/jars/libs/internal_impl-24.0.0-alpha2.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="e460bc069dfd21d22770cf2a2370c9021b9c98a2">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0-alpha2_230ae8042f3874cada776979ad63d65d996e5a38.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/.gradle/caches/modules-2/files-2.1/com.google.protobuf.nano/protobuf-javanano/3.1.0/5110f05deac8f15244897b3f70e9ce413468771d/protobuf-javanano-3.1.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="5110f05deac8f15244897b3f70e9ce413468771d">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/protobuf-javanano-3.1.0_326a3955b0b112141b3a72b2fb70c93ad6a69e46.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-alpha2/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="661a632c3b434991d6364690cbe0f786371101cc">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0-alpha2_0162dbe9176fee8825993ed31ee4991d27b3e1e9.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0-alpha2/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="bf5aa3b026d5b5fd9f4ab5e8cf13499b9e016dfb">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0-alpha2_ecad8421edfd70b976ba18a0046381d182f6cb21.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-alpha2/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="32ab8bede8cd600f25a5bb3fe15068c81c8910dc">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0-alpha2_d8a458378a00152244b32541b88fdbc6c6116c23.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/libs/json-simple-1.1.1.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/json-simple-1.1.1_26327236f9cca5e3e3adf148684b6a5e5d186f94.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/WordWorld/common/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="160fa17236bfe9cb75edc4e47a1e66a49e928c48">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-common-unspecified_8515071b8b3fe7b15078200ad78124cefb969e53.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0-alpha2/support-annotations-24.0.0-alpha2.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8071e1e6cd07e9253720313d6c14286a7ee424e0">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0-alpha2_c215013ef3a50015e21a6003ab78b59dda3b6be1.jar" />
+    </item>
+    <item
+        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/WordWorld/audio/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="3598b40f7d26920f8fd574791e51d639d700556f">
+        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-audio-unspecified_5b270f465e79d6ec7dda669185d51b257593344e.jar" />
+    </item>
+
+</items>
