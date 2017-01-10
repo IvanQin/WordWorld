@@ -5,8 +5,8 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 
 public class Transport {
-	    String IP_ADDR = "119.29.24.124";
-	    int PORT = 8080;
+	String IP_ADDR = "115.159.98.92";
+	int PORT = 8086;
 
 	    public Transport(String ip, int port){
 	    	IP_ADDR=ip;
