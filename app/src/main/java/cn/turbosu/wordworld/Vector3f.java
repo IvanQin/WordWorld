@@ -10,4 +10,9 @@ public class Vector3f {
         this.y=y;
         this.z=z;
     }
+
+    double getPhi() {
+        double xz = Math.sqrt(x * x + z * z);
+        return Math.atan2(y, xz) * 180 / Math.PI;
+    }
 }

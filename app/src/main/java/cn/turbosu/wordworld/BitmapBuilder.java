@@ -8,8 +8,8 @@ import android.graphics.Typeface;
 /**
  * Created by TurboSu on 16/11/29.
  */
-public class ReadIMG {
-    public static Bitmap initFontBitmap(String word){
+public class BitmapBuilder {
+    public static Bitmap getBitmap(String word) {
         String font = word;
         Bitmap bitmap = Bitmap.createBitmap(128, 64, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
@@ -20,7 +20,6 @@ public class ReadIMG {
         String fontType = "宋体";
         //Typeface typeface = Typeface.create(fontType, Typeface.BOLD);
         Typeface typeface = Typeface.defaultFromStyle(Typeface.BOLD);
-
         //消除锯齿
         p.setAntiAlias(true);
         //字体为红色
@@ -29,10 +28,6 @@ public class ReadIMG {
         p.setTextSize(20);
         //绘制字体
         canvas.drawText(font, 0, 32, p);
-        int r,g,b;
-
-
-
         return bitmap;
     }
 }

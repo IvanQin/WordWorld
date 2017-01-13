@@ -14,11 +14,7 @@ import java.util.Date;
  * Created by TurboSu on 16/6/26.
  */
 
-class Str{
-    String msg=null;
-}
-
-public class freshMessage {
+public class MessageFresher {
 
     private static Client client;
 
@@ -34,8 +30,8 @@ public class freshMessage {
                         Flags.needNewWorld = false;
                         //Word word = client.getWord();
                         Word word = WordList.getNext();
-                        englishWord.setTexture(ReadIMG.initFontBitmap(word.getEnglish()));
-                        chineseWord.setTexture(ReadIMG.initFontBitmap(word.getChinese()));
+                        englishWord.setTexture(BitmapBuilder.getBitmap(word.getEnglish()));
+                        chineseWord.setTexture(BitmapBuilder.getBitmap(word.getChinese()));
                         try {
                             Thread.sleep(100);
                         } catch (InterruptedException e) {
