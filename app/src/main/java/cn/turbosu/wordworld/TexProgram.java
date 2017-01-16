@@ -39,7 +39,7 @@ public class TexProgram {
         // Set the normal positions of the cube, again for shading
         GLES20.glVertexAttribPointer(positionParam, coordsPerVertex, GLES20.GL_FLOAT, false, 0, object.vertices.get());
         GLES20.glVertexAttribPointer(normalParam, 3, GLES20.GL_FLOAT, false, 0, object.normals.get());
-        GLES20.glVertexAttribPointer(coordParam, 4, GLES20.GL_FLOAT, false, 0,object.coords.get());
+        GLES20.glVertexAttribPointer(coordParam, 2, GLES20.GL_FLOAT, false, 0,object.coords.get());
 
         int textureId=createTexture(bitmap);
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,textureId);
@@ -48,7 +48,7 @@ public class TexProgram {
         GLES20.glEnableVertexAttribArray(normalParam);
         GLES20.glEnableVertexAttribArray(coordParam);
 
-        GLES20.glDrawArrays(GLES20.GL_TRIANGLE_FAN, 0, object.verticesNum);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, object.verticesNum);
 
     }
 

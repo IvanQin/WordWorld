@@ -22,17 +22,26 @@ package cn.turbosu.wordworld;
 public final class WorldLayoutData {
 
   public static final float[] SQUARE_COORDS = new float[]{
-          -2f, 1f, 0f,
-          -2f, -2f, 0f,
-          1f, 1f, 0f,
-          1f, -2f, 0f,
+
+          -2f, -1f, 0f,
+          -2f, -3f, 0f,
+          2f, -1f, 0f,
+          2f,-3f, 0f,
+
+
+
+
 
   };
   public static final float[] SQUARE_TEX_COORDS = new float[]{
-          0f, 1f,
+
           0f, 0f,
-          1f, 1f,
+          0f, 1f,
           1f, 0f,
+          1f, 1f,
+
+
+
 
   };
   public static final float[] SQUARE_COLORS = new float[]{
@@ -50,6 +59,9 @@ public final class WorldLayoutData {
           0f, 0.0f, 1.0f,
           0f, 0.0f, 1.0f,
           0f, 0.0f, 1.0f,
+          0f, 0.0f, 1.0f,
+          0f, 0.0f, 1.0f,
+
   };
 
   public static final float[] CUBE_COORDS = new float[] {

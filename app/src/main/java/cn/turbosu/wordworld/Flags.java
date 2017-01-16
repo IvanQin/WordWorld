@@ -5,4 +5,6 @@ package cn.turbosu.wordworld;
  */
 public class Flags {
     static boolean needNewWorld = false;
+    static boolean loadImg = false;
+
 }

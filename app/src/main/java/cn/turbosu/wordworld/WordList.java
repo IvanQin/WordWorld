@@ -8,8 +8,8 @@ public class WordList {
     static int now=0;
 
     static Word[] list={
-            new Word("dog","狗 n."),
-            new Word("cat","猫 n."),
+            new Word("doggggg","狗狗狗狗 n."),
+            new Word("cattttt","猫猫猫猫 n."),
             new Word("bird","鸟 n."),
             new Word("bear","熊 n."),
             new Word("eat","吃 n."),

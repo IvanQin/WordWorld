@@ -2,81 +2,144 @@
 <items version="2" >
 
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0-alpha2/jars/classes.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="df7f6513d6e2aaa302bbac654807c6129b517090">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0-alpha2_e2359ca6071f25421184f93ce41d61fca5b63453.jar" />
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_6002cc442a051ef12663bea32614e2d286872835.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/WordWorld/base/unspecified/jars/classes.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="754abaffa2df61e40678416d0673b3bd639044a8">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-base-unspecified_796da374ee53722faa4c010a83b8a5849eb39a1b.jar" />
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_1fa361b7a6bb452c88ad6a8a09efcd7d6de77f83.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-alpha2/jars/libs/internal_impl-24.0.0-alpha2.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="e460bc069dfd21d22770cf2a2370c9021b9c98a2">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0-alpha2_230ae8042f3874cada776979ad63d65d996e5a38.jar" />
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_af8a9af7f70021c4867c5394906fbf6d43d244e5.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/.gradle/caches/modules-2/files-2.1/com.google.protobuf.nano/protobuf-javanano/3.1.0/5110f05deac8f15244897b3f70e9ce413468771d/protobuf-javanano-3.1.0.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_02466955b0f6914bb5ba4c2d6ecdc7d01848ec08.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/.gradle/caches/modules-2/files-2.1/com.google.protobuf.nano/protobuf-javanano/3.1.0/5110f05deac8f15244897b3f70e9ce413468771d/protobuf-javanano-3.1.0.jar"
         jumboMode="false"
         revision="24.0.1"
         sha1="5110f05deac8f15244897b3f70e9ce413468771d">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/protobuf-javanano-3.1.0_326a3955b0b112141b3a72b2fb70c93ad6a69e46.jar" />
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/protobuf-javanano-3.1.0_64fed9e82293aa6c76159536b3eabd622ae0fdd1.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0-alpha2/jars/classes.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="661a632c3b434991d6364690cbe0f786371101cc">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0-alpha2_0162dbe9176fee8825993ed31ee4991d27b3e1e9.jar" />
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_6f844d9757ee106610d8285df0fbcf44ff12e149.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0-alpha2/jars/classes.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/WordWorld/base/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="bf5aa3b026d5b5fd9f4ab5e8cf13499b9e016dfb">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0-alpha2_ecad8421edfd70b976ba18a0046381d182f6cb21.jar" />
+        sha1="754abaffa2df61e40678416d0673b3bd639044a8">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-base-unspecified_ec4bbaad6c6e68fe1fb12092f4ed9ba95ece9d61.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0-alpha2/jars/classes.jar"
+        jar="/Users/Qinyifan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="32ab8bede8cd600f25a5bb3fe15068c81c8910dc">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0-alpha2_d8a458378a00152244b32541b88fdbc6c6116c23.jar" />
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_0da5ef2b33c0670e1f5726f6138d76cb84a4a514.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/libs/json-simple-1.1.1.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/json-simple-1.1.1_26327236f9cca5e3e3adf148684b6a5e5d186f94.jar" />
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_76812bb2f289e225a86548e69c627ff100da67cc.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/WordWorld/common/unspecified/jars/classes.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/WordWorld/common/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="24.0.1"
         sha1="160fa17236bfe9cb75edc4e47a1e66a49e928c48">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-common-unspecified_8515071b8b3fe7b15078200ad78124cefb969e53.jar" />
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-common-unspecified_e27331c23bcf6a870789fb8880b97f72fcb1d153.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0-alpha2/support-annotations-24.0.0-alpha2.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.1"
-        sha1="8071e1e6cd07e9253720313d6c14286a7ee424e0">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0-alpha2_c215013ef3a50015e21a6003ab78b59dda3b6be1.jar" />
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_ec69dd8ab7748c2e3dbdeca1daed14381c5d07c4.jar" />
     </item>
     <item
-        jar="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/exploded-aar/WordWorld/audio/unspecified/jars/classes.jar"
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_ecade8d2d7c4ea80dd3b8a1cf381cc12892ad45b.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_7d845c920b0eeb68aa42dbc5e6e0bbff323ac90e.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_03695d86b7aa49718cf928ff3d73831cf17de3f2.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_4875c5344e8c344ed3e3da14b20cf05defb6a9ec.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_0f14c6dae71308cbfbec03b392462203fc090cf6.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/WordWorld/audio/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="24.0.1"
         sha1="3598b40f7d26920f8fd574791e51d639d700556f">
-        <dex dex="/Users/TurboSu/Documents/Program/Android/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-audio-unspecified_5b270f465e79d6ec7dda669185d51b257593344e.jar" />
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/WordWorld-audio-unspecified_01fcc3764aa9971090355ccc371f5e4f8efd4c21.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_985dd8191149a3df33fb78b2ff0afd2b4c3090e0.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/libs/json-simple-1.1.1.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/json-simple-1.1.1_1fd50c85be1bdfbe7a8d05c4aa10b3b4888467ac.jar" />
+    </item>
+    <item
+        jar="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/Qinyifan/Documents/GoogleVR/WordWorld/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_ff5c9633bd4a54126f0ba6ffe516b599445966d6.jar" />
     </item>
 
 </items>

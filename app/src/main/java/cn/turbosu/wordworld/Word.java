@@ -4,8 +4,8 @@ package cn.turbosu.wordworld;
  * Created by TurboSu on 16/11/30.
  */
 public class Word{
-    String english;
-    String chinese;
+    private String english;
+    private String chinese;
     public Word(String english,String chinese){
         this.chinese=chinese;
         this.english=english;

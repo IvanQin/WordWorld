@@ -32,7 +32,8 @@ public class freshMessage {
                 while(true) {
                     if(Flags.needNewWorld){
                         Flags.needNewWorld = false;
-                        Word word = client.getWord();
+                        //Word word = client.getWord();
+                        Word word = WordList.getNext();
                         englishWord.setTexture(ReadIMG.initFontBitmap(word.getEnglish()));
                         chineseWord.setTexture(ReadIMG.initFontBitmap(word.getChinese()));
                         try {

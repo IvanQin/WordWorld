@@ -5,12 +5,12 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 
 public class Transport {
-	    String IP_ADDR;
-	    int PORT = 8080;
+	String IP_ADDR = "115.159.98.92";
+	int PORT = 8086;
 
 	    public Transport(String ip, int port){
-	    	this.IP_ADDR=ip;
-	    	this.PORT=port;
+	    	IP_ADDR=ip;
+	    	PORT=port;
 		}
 	    
 	   
@@ -21,7 +21,7 @@ public class Transport {
             try {  
             	
                 byte[] bs = msg.getBytes("utf-8");
-            	socket = new Socket(this.IP_ADDR, this.PORT);
+            	socket = new Socket(IP_ADDR, PORT);
                 DataInputStream input = new DataInputStream(socket.getInputStream());
                 DataOutputStream output = new DataOutputStream(socket.getOutputStream());
                 output.write(bs);

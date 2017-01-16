@@ -49,7 +49,11 @@ public class TexObject {
     }
 
     void setTexture(Bitmap tex) {
+        Flags.loadImg=true;
+        Bitmap oldTex=this.texture;
         this.texture = tex;
+        oldTex.recycle();
+        Flags.loadImg=false;
     }
 
     void draw(float[] lightPosInEyeSpace, float[] view, int coordsPerVertex, float[] perspective) {

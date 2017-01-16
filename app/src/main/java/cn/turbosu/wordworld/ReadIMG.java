@@ -11,10 +11,10 @@ import android.graphics.Typeface;
 public class ReadIMG {
     public static Bitmap initFontBitmap(String word){
         String font = word;
-        Bitmap bitmap = Bitmap.createBitmap(64, 64, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = Bitmap.createBitmap(128, 64, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         //背景颜色
-        canvas.drawColor(Color.BLACK);
+        canvas.drawColor(Color.GRAY);
         Paint p = new Paint();
         //字体设置
         String fontType = "宋体";
@@ -26,9 +26,9 @@ public class ReadIMG {
         //字体为红色
         p.setColor(Color.WHITE);
         p.setTypeface(typeface);
-        p.setTextSize(10);
+        p.setTextSize(20);
         //绘制字体
-        canvas.drawText(font, 0, 40, p);
+        canvas.drawText(font, 0, 32, p);
         int r,g,b;
 
 
