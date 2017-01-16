@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d338971-122b-4068-a457-a535a778b24a" name="Default" comment="Merge branch 'master' of https://git.oschina.net/turbosu/WordWorld&#10;&#10;# Conflicts:&#10;#&#9;.idea/vcs.xml&#10;#&#9;app/src/main/AndroidManifest.xml&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Client.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Flags.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/ReadIMG.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexObject.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexProgram.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Transport.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WordList.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WorldLayoutData.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/freshMessage.java&#10;#&#9;app/src/main/res/layout/common_ui.xml&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/BitmapBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/MessageFresher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/ShaderLoader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/Flags.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/Flags.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/TexProgram.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/TexProgram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/VRActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/VRActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/Vector3f.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/Vector3f.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/Word.java" afterPath="$PROJECT_DIR$/app/src/main/java/cn/turbosu/wordworld/Word.java" />
     </list>
     <list id="7c32cd05-532b-468b-afc4-9687a5501ca5" name="fix some bugs (cherry picked from commit 5b56532)" comment="fix some bugs&#10;(cherry picked from commit 5b56532)" />
     <ignored path="WordWorld.iws" />
@@ -2829,7 +2821,14 @@
       <option name="project" value="LOCAL" />
       <updated>1483810262174</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge branch 'master' of https://git.oschina.net/turbosu/WordWorld&#10;&#10;# Conflicts:&#10;#&#9;.idea/vcs.xml&#10;#&#9;app/src/main/AndroidManifest.xml&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Client.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Flags.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/ReadIMG.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexObject.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexProgram.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Transport.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WordList.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WorldLayoutData.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/freshMessage.java&#10;#&#9;app/src/main/res/layout/common_ui.xml&#10;">
+      <created>1484538954182</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1484538954182</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2892,7 +2891,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Mod: delete unused IP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mod: delete unused IP" />
+    <MESSAGE value="Merge branch 'master' of https://git.oschina.net/turbosu/WordWorld&#10;&#10;# Conflicts:&#10;#&#9;.idea/vcs.xml&#10;#&#9;app/src/main/AndroidManifest.xml&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Client.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Flags.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/ReadIMG.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexObject.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexProgram.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Transport.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WordList.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WorldLayoutData.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/freshMessage.java&#10;#&#9;app/src/main/res/layout/common_ui.xml&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://git.oschina.net/turbosu/WordWorld&#10;&#10;# Conflicts:&#10;#&#9;.idea/vcs.xml&#10;#&#9;app/src/main/AndroidManifest.xml&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Client.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Flags.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/ReadIMG.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexObject.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/TexProgram.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/Transport.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WordList.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/WorldLayoutData.java&#10;#&#9;app/src/main/java/cn/turbosu/wordworld/freshMessage.java&#10;#&#9;app/src/main/res/layout/common_ui.xml&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
