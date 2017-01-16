@@ -9,9 +9,9 @@ import java.util.List;
  * Created by TurboSu on 16/11/28.
  */
 public class RawObject {
-    RawBuffer vertices;
-    RawBuffer[] colors;
-    RawBuffer normals;
+    DataBuffer vertices;
+    DataBuffer[] colors;
+    DataBuffer normals;
     int verticesNum;
     int colorId;
     int colorNum;
@@ -20,23 +20,23 @@ public class RawObject {
     Program program;
 
     public RawObject(float[] vertices, float[][] colors, float[] normals) {
-        this.vertices = new RawBuffer(vertices);
+        this.vertices = new DataBuffer(vertices);
         colorNum = colors.length;
-        this.colors = new RawBuffer[colorNum];
+        this.colors = new DataBuffer[colorNum];
         for (int i = 0; i < colorNum; i++)
-            this.colors[i] = new RawBuffer(colors[i]);
-        this.normals = new RawBuffer(normals);
+            this.colors[i] = new DataBuffer(colors[i]);
+        this.normals = new DataBuffer(normals);
         colorId = 0;
         verticesNum = vertices.length / 3;
         model = new float[16];
     }
 
     public RawObject(float[] vertices, float[] colors, float[] normals) {
-        this.vertices = new RawBuffer(vertices);
+        this.vertices = new DataBuffer(vertices);
         colorNum = 1;
-        this.colors = new RawBuffer[colorNum];
-        this.colors[0] = new RawBuffer(colors);
-        this.normals = new RawBuffer(normals);
+        this.colors = new DataBuffer[colorNum];
+        this.colors[0] = new DataBuffer(colors);
+        this.normals = new DataBuffer(normals);
         colorId = 0;
         verticesNum = vertices.length / 3;
         model = new float[16];
@@ -46,7 +46,7 @@ public class RawObject {
         colorId = (colorId + 1) % colorNum;
     }
 
-    RawBuffer getColor() {
+    DataBuffer getColor() {
         return colors[colorId];
     }
 

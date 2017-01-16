@@ -36,7 +36,7 @@ public class TexProgram {
         GLES20.glUniform1i(textureParam, 0);
         GLES20.glUniformMatrix4fv(modelViewProjectionParam, 1, false, modelViewProjection, 0);
 
-        // Set the normal positions of the cube, again for shading
+        // Set the normal positions of the cube,。。。。。。。 again for shading
         GLES20.glVertexAttribPointer(positionParam, coordsPerVertex, GLES20.GL_FLOAT, false, 0, object.vertices.get());
         GLES20.glVertexAttribPointer(normalParam, 3, GLES20.GL_FLOAT, false, 0, object.normals.get());
         GLES20.glVertexAttribPointer(coordParam, 2, GLES20.GL_FLOAT, false, 0,object.coords.get());

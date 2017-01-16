@@ -7,14 +7,14 @@ import java.nio.FloatBuffer;
 /**
  * Created by TurboSu on 16/11/28.
  */
-public class RawBuffer {
+public class DataBuffer {
     FloatBuffer buffer;
 
-    public RawBuffer() {
+    public DataBuffer() {
 
     }
 
-    public RawBuffer(float[] data) {
+    public DataBuffer(float[] data) {
         ByteBuffer bb = ByteBuffer.allocateDirect(data.length * 4);
         bb.order(ByteOrder.nativeOrder());
         buffer = bb.asFloatBuffer();
@@ -22,8 +22,8 @@ public class RawBuffer {
         buffer.position(0);
     }
 
-    static RawBuffer newBuffer(float[] data) {
-        return new RawBuffer(data);
+    static DataBuffer newBuffer(float[] data) {
+        return new DataBuffer(data);
     }
 
     public FloatBuffer get() {

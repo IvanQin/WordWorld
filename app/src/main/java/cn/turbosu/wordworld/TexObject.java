@@ -9,10 +9,10 @@ import android.opengl.Matrix;
  * Created by TurboSu on 16/11/28.
  */
 public class TexObject {
-    RawBuffer vertices;
+    DataBuffer vertices;
     Bitmap texture;
-    RawBuffer coords;
-    RawBuffer normals;
+    DataBuffer coords;
+    DataBuffer normals;
     int verticesNum;
     int colorId;
     int colorNum;
@@ -23,11 +23,11 @@ public class TexObject {
 
 
     public TexObject(float[] vertices,float[] coords, Bitmap tex, float[] normals) {
-        this.vertices = new RawBuffer(vertices);
-        this.coords = new RawBuffer(coords);
+        this.vertices = new DataBuffer(vertices);
+        this.coords = new DataBuffer(coords);
         colorNum = 1;
         this.texture = tex;
-        this.normals = new RawBuffer(normals);
+        this.normals = new DataBuffer(normals);
         colorId = 0;
         verticesNum = vertices.length / 3;
         model = new float[16];
@@ -63,7 +63,4 @@ public class TexObject {
         Matrix.multiplyMM(modelViewProjection, 0, perspective, 0, modelView, 0);
         program.draw(this, lightPosInEyeSpace, modelView, coordsPerVertex, modelViewProjection,texture);
     }
-
-
-
 }
