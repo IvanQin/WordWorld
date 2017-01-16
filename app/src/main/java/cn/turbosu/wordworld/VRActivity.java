@@ -22,7 +22,6 @@ import android.opengl.Matrix;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
-
 import com.google.vr.sdk.audio.GvrAudioEngine;
 import com.google.vr.sdk.base.AndroidCompat;
 import com.google.vr.sdk.base.Eye;
@@ -30,29 +29,15 @@ import com.google.vr.sdk.base.GvrActivity;
 import com.google.vr.sdk.base.GvrView;
 import com.google.vr.sdk.base.HeadTransform;
 import com.google.vr.sdk.base.Viewport;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
-
 import javax.microedition.khronos.egl.EGLConfig;
 
 /**
- * A Google VR sample application.
- * </p><p>
- * The TreasureHunt scene consists of a planar ground grid and a floating
- * "treasure" cube. When the user looks at the cube, the cube will turn gold.
- * While gold, the user can activate the Cardboard trigger, which will in turn
- * randomly reposition the cube.
+ * WordWorld 主界面（VR界面）.
  */
 public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
 
 
-    private static final String TAG = "WordWorldActivity";
+
 
     private static final float Z_NEAR = 0.1f;
     private static final float Z_FAR = 100.0f;
@@ -62,10 +47,10 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
 
     private static final float YAW_LIMIT = 0.12f;
     private static final float PITCH_LIMIT = 0.12f;
-
+    private static final float FLOOR_DEPTH = 20f;
     private static final int COORDS_PER_VERTEX = 3;
 
-    // We keep the light always position just above the user.
+    // 光线位置位于观察者正上方.
     private static final float[] LIGHT_POS_IN_WORLD_SPACE = new float[]{0.0f, 2.0f, 0.0f, 1.0f};
 
     // Convenience vector for extracting the position from a matrix via multiplication.
@@ -74,18 +59,16 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
     private static final float MIN_MODEL_DISTANCE = 3.0f;
     private static final float MAX_MODEL_DISTANCE = 7.0f;
 
-    private static final String OBJECT_SOUND_FILE = "cube_sound.wav";
-    private static final String SUCCESS_SOUND_FILE = "success.wav";
 
     private final float[] lightPosInEyeSpace = new float[4];
 
-    //private RawObject cube;
+
     private RawObject floor;
     private TexObject englishWord;
     private TexObject chineseWord;
 
-    private Word word;
-    private boolean colorLock = false;
+    private Word currentWord;
+    private boolean updateLock = false;
 
 
     private float[] camera;
@@ -97,7 +80,7 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
     private float[] headRotation;
 
     private float objectDistance = MAX_MODEL_DISTANCE / 2.0f;
-    private float floorDepth = 20f;
+
 
     private Vibrator vibrator;
 
@@ -105,36 +88,6 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
     private volatile int sourceId = GvrAudioEngine.INVALID_ID;
     private volatile int successSourceId = GvrAudioEngine.INVALID_ID;
 
-    /**
-     * Converts a raw text file, saved as a resource, into an OpenGL ES shader.
-     *
-     * @param type  The type of shader we will be creating.
-     * @param resId The resource ID of the raw text file about to be turned into a shader.
-     * @return The shader object handler.
-     */
-    private int loadGLShader(int type, int resId) {
-        String code = readRawTextFile(resId);
-        int shader = GLES20.glCreateShader(type);
-        GLES20.glShaderSource(shader, code);
-        GLES20.glCompileShader(shader);
-
-        // Get the compilation status.
-        final int[] compileStatus = new int[1];
-        GLES20.glGetShaderiv(shader, GLES20.GL_COMPILE_STATUS, compileStatus, 0);
-
-        // If the compilation failed, delete the shader.
-        if (compileStatus[0] == 0) {
-            Log.e(TAG, "Error compiling shader: " + GLES20.glGetShaderInfoLog(shader));
-            GLES20.glDeleteShader(shader);
-            shader = 0;
-        }
-
-        if (shader == 0) {
-            throw new RuntimeException("Error creating shader.");
-        }
-
-        return shader;
-    }
 
     /**
      * Checks if we've had an error inside of OpenGL ES, and if so what that error is.
@@ -144,7 +97,7 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
     private static void checkGLError(String label) {
         int error;
         while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) {
-            Log.e(TAG, label + ": glError " + error);
+            Log.e(Flags.TAG, label + ": glError " + error);
             throw new RuntimeException(label + ": glError " + error);
         }
     }
@@ -205,12 +158,12 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
 
     @Override
     public void onRendererShutdown() {
-        Log.i(TAG, "onRendererShutdown");
+        Log.i(Flags.TAG, "onRendererShutdown");
     }
 
     @Override
     public void onSurfaceChanged(int width, int height) {
-        Log.i(TAG, "onSurfaceChanged");
+        Log.i(Flags.TAG, "onSurfaceChanged");
     }
 
     /**
@@ -223,38 +176,69 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
      */
     @Override
     public void onSurfaceCreated(EGLConfig config) {
-        Log.i(TAG, "onSurfaceCreated");
-        GLES20.glClearColor(0.1f, 0.1f, 0.1f, 0.5f); // Dark background so text shows up well.
-/*
-        cube = new RawObject(WorldLayoutData.CUBE_COORDS, WorldLayoutData.CUBE_COLORS, WorldLayoutData.CUBE_NORMALS);
-        cube.setPos(0.0f, 0.0f, MAX_MODEL_DISTANCE / 2.0f);
-*/
-        word = WordList.getNext();
+        Log.i(Flags.TAG, "onSurfaceCreated");
+        GLES20.glClearColor(0.1f, 0.1f, 0.1f, 0.5f); // 设定背景色为黑色.
 
-        englishWord = new TexObject(WorldLayoutData.SQUARE_COORDS, WorldLayoutData.SQUARE_TEX_COORDS, ReadIMG.initFontBitmap(word.getEnglish()), WorldLayoutData.SQUARE_NORMALS);
+        currentWord = WordList.getNext(); // 设置当前单词
+
+        englishWord =
+                new TexObject(
+                        WorldLayoutData.SQUARE_COORDS, //顶点坐标
+                        WorldLayoutData.SQUARE_TEX_COORDS, //文理映射坐标
+                        BitmapBuilder.getBitmap(currentWord.getEnglish()), //纹理图
+                        WorldLayoutData.SQUARE_NORMALS //顶点法线
+                );
         englishWord.setPos(0.0f, 3.0f, -MAX_MODEL_DISTANCE / 2.0f);
 
-        chineseWord = new TexObject(WorldLayoutData.SQUARE_COORDS, WorldLayoutData.SQUARE_TEX_COORDS, ReadIMG.initFontBitmap(word.getChinese()), WorldLayoutData.SQUARE_NORMALS);
+        chineseWord =
+                new TexObject(
+                        WorldLayoutData.SQUARE_COORDS,
+                        WorldLayoutData.SQUARE_TEX_COORDS,
+                        BitmapBuilder.getBitmap(currentWord.getChinese()),
+                        WorldLayoutData.SQUARE_NORMALS
+                );
         chineseWord.setPos(MAX_MODEL_DISTANCE / 2.0f, 3.0f, 0.0f);
 
-        floor = new RawObject(WorldLayoutData.FLOOR_COORDS, WorldLayoutData.FLOOR_COLORS, WorldLayoutData.FLOOR_NORMALS);
-        floor.setPos(0, -floorDepth, 0); // Floor appears below user.
+        floor =
+                new RawObject(
+                        WorldLayoutData.FLOOR_COORDS, //顶点坐标
+                        WorldLayoutData.FLOOR_COLORS, //顶点颜色
+                        WorldLayoutData.FLOOR_NORMALS //顶点法线
+                );
+        floor.setPos(0, -FLOOR_DEPTH, 0); // Floor appears below user.
 
-        freshMessage.start(englishWord, chineseWord);
-        int vertexShader = loadGLShader(GLES20.GL_VERTEX_SHADER, R.raw.light_vertex);
-        int gridShader = loadGLShader(GLES20.GL_FRAGMENT_SHADER, R.raw.grid_fragment);
-        int passthroughShader = loadGLShader(GLES20.GL_FRAGMENT_SHADER, R.raw.passthrough_fragment);
+        MessageFresher.start(englishWord, chineseWord); //开始检测用户状态判断是否更新单词
 
-        int texVertexShader = loadGLShader(GLES20.GL_VERTEX_SHADER, R.raw.tex_vertex);
-        int texFragShader = loadGLShader(GLES20.GL_FRAGMENT_SHADER, R.raw.tex_fragment);
 
-        /*cube.setProgram(
-                new Program().newBuilder().attacheShader(vertexShader).attacheShader(passthroughShader).build()
-        );
+        //地板的顶点着色器
+        int vertexShader =
+                ShaderLoader.loadGLShader(
+                        GLES20.GL_VERTEX_SHADER,
+                        getResources().openRawResource(R.raw.light_vertex)
+                );
 
-        checkGLError("Cube program");
-        checkGLError("Cube program params");
-        */
+        //地板的面着色器
+        int gridShader =
+                ShaderLoader.loadGLShader(
+                        GLES20.GL_FRAGMENT_SHADER,
+                        getResources().openRawResource(R.raw.grid_fragment)
+                );
+
+        // 文字的顶点着色器
+        int texVertexShader =
+                ShaderLoader.loadGLShader(
+                        GLES20.GL_VERTEX_SHADER,
+                        getResources().openRawResource(R.raw.tex_vertex)
+                );
+
+        // 文字的面着色器
+        int texFragShader =
+                ShaderLoader.loadGLShader(
+                        GLES20.GL_FRAGMENT_SHADER,
+                        getResources().openRawResource(R.raw.tex_fragment)
+                );
+
+
         englishWord.setProgram(
                 new TexProgram().newBuilder().attacheShader(texVertexShader).attacheShader(texFragShader).build()
         );
@@ -285,39 +269,15 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
     }
 
     /**
-     * Updates the cube model position.
+     * 更新物体位置
      */
     protected void updateModelPosition() {
-        //cube.replace();
         englishWord.replace();
         chineseWord.replace();
-        // Update the sound location to match it with the new cube position.
-
         checkGLError("updateCubePosition");
     }
 
-    /**
-     * Converts a raw text file into a string.
-     *
-     * @param resId The resource ID of the raw text file about to be turned into a shader.
-     * @return The context of the text file, or null in case of error.
-     */
-    private String readRawTextFile(int resId) {
-        InputStream inputStream = getResources().openRawResource(resId);
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
-            reader.close();
-            return sb.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+
 
     /**
      * Prepares OpenGL ES before we draw a frame.
@@ -329,41 +289,31 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
         setCubeRotation();
 
         // Build the camera matrix and apply it to the ModelView.
-        Matrix.setLookAtM(camera, 0, 0.0f, 0.0f, CAMERA_Z, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+        Matrix.setLookAtM(
+                camera,
+                0, //offset
+                0.0f, 0.0f, CAMERA_Z, //初始观察者位置
+                0.0f, 0.0f, 0.0f, //初始视觉中心位置
+                0.0f, 1.0f, 0.0f //初始视觉方向
+        );
 
-
+        // 当前用户头的方位矩阵
         headTransform.getHeadView(headView, 0);
 
-        double x = -headView[2];
-        double y = -headView[6];
-        double z = -headView[10];
+        // 用户的视觉方向
+        Vector3f sightPoint = new Vector3f(-headView[2], -headView[6], -headView[10]);
 
-        double xz = Math.sqrt(x * x + z * z);
+        // 用户俯仰角
+        double arc = sightPoint.getPhi();
 
-        double arc = Math.atan2(y, xz) * 180 / Math.PI;
-
-        if (arc < -65 && colorLock == false) {
-            //cube.nextColor();
+        if (arc < -65 && updateLock == false) {
             Flags.needNewWorld = true;
-            /*
-            word = WordList.getNext();
-            englishWord.setTexture(ReadIMG.initFontBitmap(word.getEnglish()));
-            chineseWord.setTexture(ReadIMG.initFontBitmap(word.getChinese()));
-            */
-            colorLock = true;
+            updateLock = true;
         }
-        if (arc > -10 && colorLock == true) {
-            colorLock = false;
+        if (arc > -10 && updateLock == true) {
+            updateLock = false;
         }
 
-        /*
-        // Update the 3d audio engine with the most recent head rotation.
-        headTransform.getQuaternion(headRotation, 0);
-        gvrAudioEngine.setHeadRotation(
-                headRotation[0], headRotation[1], headRotation[2], headRotation[3]);
-        // Regular update call to GVR audio engine.
-        gvrAudioEngine.update();
-        */
         checkGLError("onReadyToDraw");
     }
 
@@ -381,7 +331,7 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
     }
 
     /**
-     * Draws a frame for an eye.
+     * 对每个眼睛进行视角微调.
      *
      * @param eye The eye to render. Includes all required transformations.
      */
@@ -389,8 +339,6 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
     public void onDrawEye(Eye eye) {
         GLES20.glEnable(GLES20.GL_DEPTH_TEST);
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-
-        checkGLError("colorParam");
 
         // Apply the eye transformation to the camera.
         Matrix.multiplyMM(view, 0, eye.getEyeView(), 0, camera, 0);
@@ -402,11 +350,12 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
         // for calculating cube position and light.
         float[] perspective = eye.getPerspective(Z_NEAR, Z_FAR);
 
-        //cube.draw(lightPosInEyeSpace, view, COORDS_PER_VERTEX, perspective);
+        //当不在更新图片的时候允许绘图
         if (Flags.loadImg == false) {
             englishWord.draw(lightPosInEyeSpace, view, COORDS_PER_VERTEX, perspective);
             chineseWord.draw(lightPosInEyeSpace, view, COORDS_PER_VERTEX, perspective);
         }
+        //绘制地板
         floor.draw(lightPosInEyeSpace, view, COORDS_PER_VERTEX, perspective);
 
     }
@@ -421,9 +370,7 @@ public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
      */
     @Override
     public void onCardboardTrigger() {
-        Log.i(TAG, "onCardboardTrigger");
-
-
+        Log.i(Flags.TAG, "onCardboardTrigger");
         // Always give user feedback.
         vibrator.vibrate(50);
     }

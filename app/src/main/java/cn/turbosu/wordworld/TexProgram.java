@@ -81,7 +81,7 @@ public class TexProgram {
         }
     }
 
-    private int createTexture( Bitmap bitmap){
+    private int createTexture(Bitmap bitmap) {
         int[] texture=new int[1];
 
             //生成纹理
