@@ -36,9 +36,6 @@ import javax.microedition.khronos.egl.EGLConfig;
  */
 public class VRActivity extends GvrActivity implements GvrView.StereoRenderer {
 
-
-
-
     private static final float Z_NEAR = 0.1f;
     private static final float Z_FAR = 100.0f;
 

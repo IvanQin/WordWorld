@@ -6,6 +6,7 @@ import android.opengl.GLES20;
  * Created by TurboSu on 16/11/28.
  */
 public class Program {
+
     int program;
     int positionParam;
     int normalParam;

@@ -28,10 +28,6 @@ public final class WorldLayoutData {
           2f, -1f, 0f,
           2f,-3f, 0f,
 
-
-
-
-
   };
   public static final float[] SQUARE_TEX_COORDS = new float[]{
 

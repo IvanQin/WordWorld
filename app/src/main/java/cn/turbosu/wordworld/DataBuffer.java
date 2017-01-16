@@ -8,6 +8,7 @@ import java.nio.FloatBuffer;
  * Created by TurboSu on 16/11/28.
  */
 public class DataBuffer {
+
     FloatBuffer buffer;
 
     public DataBuffer() {

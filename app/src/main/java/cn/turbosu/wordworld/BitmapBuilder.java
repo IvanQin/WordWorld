@@ -9,6 +9,7 @@ import android.graphics.Typeface;
  * Created by TurboSu on 16/11/29.
  */
 public class BitmapBuilder {
+
     public static Bitmap getBitmap(String word) {
         String font = word;
         Bitmap bitmap = Bitmap.createBitmap(128, 64, Bitmap.Config.ARGB_8888);

@@ -11,6 +11,7 @@ import java.util.List;
  * Created by TurboSu on 17/1/13.
  */
 public class Model {
+
     DataBuffer vertices;
     DataBuffer normals;
     int verticesNum;

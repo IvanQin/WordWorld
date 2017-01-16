@@ -4,6 +4,7 @@ package cn.turbosu.wordworld;
  * Created by TurboSu on 16/11/30.
  */
 public class WordList {
+
     static int num=8;
     static int now=0;
 

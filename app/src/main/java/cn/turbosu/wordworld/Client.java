@@ -11,7 +11,8 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Client {
-	    public static final String IP_ADDR = "115.159.98.92";
+
+	public static final String IP_ADDR = "115.159.98.92";
 	    public static final int PORT = 8086;
 	    String name;
 	    Transport trans;

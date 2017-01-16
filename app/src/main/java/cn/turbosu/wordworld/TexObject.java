@@ -9,6 +9,7 @@ import android.opengl.Matrix;
  * Created by TurboSu on 16/11/28.
  */
 public class TexObject {
+
     DataBuffer vertices;
     Bitmap texture;
     DataBuffer coords;

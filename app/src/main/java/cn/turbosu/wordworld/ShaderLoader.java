@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
  * Created by TurboSu on 17/1/13.
  */
 public class ShaderLoader {
+
     /**
      * Converts a raw text file, saved as a resource, into an OpenGL ES shader.
      *

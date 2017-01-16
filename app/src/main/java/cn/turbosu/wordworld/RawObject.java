@@ -9,6 +9,7 @@ import java.util.List;
  * Created by TurboSu on 16/11/28.
  */
 public class RawObject {
+
     DataBuffer vertices;
     DataBuffer[] colors;
     DataBuffer normals;

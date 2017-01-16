@@ -18,7 +18,6 @@ public class MessageFresher {
 
     private static Client client;
 
-
     public static void start(final TexObject englishWord, final TexObject chineseWord){
         final Client client = new Client("sss");
 

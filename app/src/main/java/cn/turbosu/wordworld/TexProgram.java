@@ -8,6 +8,7 @@ import android.opengl.GLUtils;
  * Created by TurboSu on 16/11/28.
  */
 public class TexProgram {
+
     int program;
     int positionParam;
     int normalParam;
