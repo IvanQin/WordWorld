@@ -32,6 +32,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.turbosu.wordworld.Communication;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -55,6 +57,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
+    private UserRegisterTask mRegTask = null;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
@@ -83,13 +86,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button registerButton = (Button) findViewById(R.id.register_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
         });
-
+        registerButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                attemptRegister();
+            }
+        });
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
@@ -137,13 +146,54 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
+    private void attemptRegister(){
+        boolean cancel = false;
+        if (mRegTask != null){
+            return;
+        }
+        mEmailView.setError(null);
+        mPasswordView.setError(null);
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
+        View focusView = null;
 
+        // check if the password is valid
+        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)){
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView;
+            cancel = true;
+        }
+
+        // check if the email is valid
+        if (!TextUtils.isEmpty(email)){
+            mEmailView.setError(getString(R.string.error_field_required));
+            focusView = mEmailView;
+            cancel = true;
+        }
+        else if (!isEmailValid(email)){
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
+            cancel = true;
+        }
+
+        if (cancel){
+            focusView.requestFocus();
+        }
+        else {
+            mRegTask = new UserRegisterTask(email, password);
+            mRegTask.execute((Void) null);
+        }
+
+
+
+    }
     /**
-     * Attempts to sign in or register the account specified by the login form.
+     * Attempts to sign in specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
+        // avoid repeated login (repeated click the login button if the network is poor)
         if (mAuthTask != null) {
             return;
         }
@@ -290,8 +340,41 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         int IS_PRIMARY = 1;
     }
 
+    public class UserRegisterTask extends AsyncTask<Void,Void,Boolean>{
+        private String mEmail;
+        private String mPassword;
+        UserRegisterTask (String email, String password){
+            mEmail = email;
+            mPassword = password;
+        }
+        @Override
+        protected Boolean doInBackground(Void... params){
+            Communication communication = new Communication();
+            boolean isRegSuccess;
+            User user = new User(mEmail,mPassword);
+            isRegSuccess = communication.userRegistration(user);
+            return isRegSuccess;
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+
+            mRegTask = null;
+            showProgress(false);
+
+            if (success){
+                finish();
+            }
+            else {
+                // repeated email will lead the registration unsuccessful
+                mEmailView.setText(getString(R.string.repeated_email));
+                mEmailView.requestFocus();
+            }
+        }
+
+    }
     /**
-     * Represents an asynchronous login/registration task used to authenticate
+     * Represents an asynchronous login task used to authenticate
      * the user.
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
@@ -307,14 +390,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
+            Communication communication = new Communication();
+            boolean isAuthenticated;
 
+            /*
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 return false;
             }
-
+            */
             for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
@@ -322,6 +408,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     return pieces[1].equals(mPassword);
                 }
             }
+
+            User user = new User(this.mEmail,this.mPassword);
+            isAuthenticated = communication.userAuthentication(user);
 
             // TODO: register the new account here.
             return true;
