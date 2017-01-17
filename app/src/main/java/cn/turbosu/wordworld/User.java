@@ -5,8 +5,44 @@ package cn.turbosu.wordworld;
  */
 
 public class User {
-    String userName;
-    String userEmail;
-    String password;
-    boolean isVip;
+    private String userName;
+    private String userEmail;
+    private String password;
+    private boolean isVip;
+
+    User (){}
+
+    User (String userEmail, String password){
+        this.userEmail = userEmail;
+        this.password = password;
+    }
+
+    public boolean setUserName (String userName){
+        this.userName = userName;
+        return true;
+    }
+
+    public boolean setUserEmail (String userEmail){
+        this.userEmail = userEmail;
+        return true;
+    }
+
+    public boolean setPassword (String password){
+        this.password = password;
+        return true;
+    }
+
+    public String getUserName (){
+        return this.userName;
+    }
+
+    public String getUserEmail(){
+        return this.userEmail;
+    }
+
+    public String getPassword(){
+        return this.password;
+    }
+
+
 }
