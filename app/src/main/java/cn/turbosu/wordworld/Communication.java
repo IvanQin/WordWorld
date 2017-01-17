@@ -55,7 +55,7 @@ public class Communication extends HttpTransport {
      * @param user User info
      * @return isValid of invalid user
      */
-    public boolean UserAuthentication(User user) {
+    public boolean userAuthentication(User user) {
         boolean isValid = false;
         StringBuilder param_tmp = new StringBuilder();
         String contentAll;
@@ -83,5 +83,10 @@ public class Communication extends HttpTransport {
         }
         return isValid;
     }
+
+    public boolean userRegistration(User user){
+        return true;
+    }
+
 
 }
