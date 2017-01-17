@@ -61,8 +61,8 @@ public class Communication extends HttpTransport {
         String contentAll;
 
         param_tmp.append("action=userAuthentication");
-        param_tmp.append("&userName=" + user.userName);
-        param_tmp.append("&password=" + user.password);
+        param_tmp.append("&userEmail=" + user.getUserEmail());
+        param_tmp.append("&password=" + user.getPassword());
         String param = param_tmp.toString();
 
         contentAll = post(IP_ADDR, param);  // use post
