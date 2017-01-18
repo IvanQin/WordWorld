@@ -70,6 +70,12 @@ public class HttpTransport {
         return ret;
     }
 
+    /**
+     * HTTP POST method
+     * @param url request url
+     * @param param param in (var1=value1&var2=value2...varn=valuen)
+     * @return HTTP response body in String
+     */
     protected String post(String url, String param){
         BufferedReader bufferedReader;
         BufferedWriter bufferedWriter;
