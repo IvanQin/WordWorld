@@ -26,6 +26,7 @@ public class Communication extends HttpTransport {
 
     /**
      * Get words (a bunch of words from the server as the cache words)
+     *
      * @param getWordTemplate the necessary info for get Words
      * @return words in ArrayList format
      */
@@ -52,6 +53,7 @@ public class Communication extends HttpTransport {
 
     /**
      * User authentication.
+     *
      * @param user User info
      * @return isValid of invalid user
      */
@@ -68,25 +70,52 @@ public class Communication extends HttpTransport {
         contentAll = post(IP_ADDR, param);  // use post
 
         String[] content = contentAll.split("\n");
-        HashMap<String,String> info = new HashMap<>(); // return info in HaspMap format <Key, Value>
+        HashMap<String, String> info = new HashMap<>(); // return info in HaspMap format <Key, Value>
         for (String item : content) {
             // Here, every line should be in key=value format instead of json format
             String[] info_piece = item.split("=");
             info.put(info_piece[0], info_piece[1]);
         }
-
-        if ("true".equals(info.get("isValid"))){
-            isValid = true;
-        }
+        if (info.get("isValid") == null)
+            Log.e(LOG_TAG, "Unable to find 'isValid' in the HTTP response.");
         else {
-            isValid = false;
+            if ("true".equals(info.get("isValid"))) {
+                isValid = true;
+            } else {
+                isValid = false;
+            }
         }
         return isValid;
     }
 
-    public boolean userRegistration(User user){
-        return true;
+    public boolean userRegistration(User user) {
+        boolean isRegSuccess = false;
+        String contentAll;
+        StringBuilder param_tmp = new StringBuilder();
+        param_tmp.append("action=register");
+        param_tmp.append("&userEmail=" + user.getUserEmail());
+        param_tmp.append("&password=" + user.getPassword());
+        String param = param_tmp.toString();
+
+        contentAll = post(IP_ADDR, param);
+
+        String[] content = contentAll.split("\n");
+        HashMap<String, String> info = new HashMap<>();
+        for (String item : content) {
+            String[] info_piece = item.split("=");
+            info.put(info_piece[0], info_piece[1]);
+        }
+
+        if (info.get("isRegSuccess") == null)
+            Log.e(LOG_TAG, "Unable to find 'isRegSuccess' in the HTTP response.");
+        else{
+            if ("true".equals(info.get("isRegSuccess"))){
+                isRegSuccess = true;
+            }
+            else{
+                isRegSuccess = false;
+            }
+        }
+        return isRegSuccess;
     }
-
-
 }
