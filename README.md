@@ -1,4 +1,5 @@
-#WordWorld Introduction
+# WordWorld Introduction
+
 一款基于Google Cardboard的VR背单词软件 :D
 
 An Android app for VR English study, based on the Google cardboard API. :D
